@@ -1,0 +1,11 @@
+# @name rdpAuth
+POST http://localhost:3000/login
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+
+#### Variable Response
+@accessToken = {{rdpAuth.response.body.token}}
+
+###
+GET http://localhost:3000/protected
+Authorization: Bearer {{accessToken}}
