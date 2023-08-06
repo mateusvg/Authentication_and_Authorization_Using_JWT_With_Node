@@ -22,7 +22,13 @@ app.post('/login', (req, res) => {
     const token = jwt.sign({ userId }, '12345abc', { expiresIn: "10s" }); // In production use environment variables, expire in 10 seconds
     // Send the token back to the client and save this token in local storage
     res.json({ token });
+
+    // To save a string in Local Storage you use
+    // window.localStorage.setItem(key, value);
+    // You can get the value later with:
+    // window.localStorage.getItem(key);
 });
+
 // Protected route
 app.get('/protected', jwtMiddleware, (req, res) => {
     // Access the user ID from the request object
