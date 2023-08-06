@@ -20,7 +20,7 @@ app.post('/login', (req, res) => {
     const userId = 123; // Get the user ID from your authentication logic
     // Create and sign the token
     const token = jwt.sign({ userId }, '12345abc', { expiresIn: "10s" }); // In production use environment variables, expire in 10 seconds
-    // Send the token back to the client
+    // Send the token back to the client and save this token in local storage
     res.json({ token });
 });
 // Protected route
