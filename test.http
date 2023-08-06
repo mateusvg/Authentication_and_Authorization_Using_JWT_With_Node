@@ -6,6 +6,9 @@ Accept: application/json
 #### Variable Response
 @accessToken = {{rdpAuth.response.body.token}}
 
-###
+### Protected route
 GET http://localhost:3000/protected
 Authorization: Bearer {{accessToken}}
+
+### Home
+Get http://localhost:3000/
